@@ -22,7 +22,7 @@ def ingest_data():
             url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'.format(
                 year)
             archivo = pd.read_excel(url)
-            archivo.to_excel('data_lake/landing/{}.xlsx'.format(year),
+            archivo.to_excel('data_lake/landing/{}.xls'.format(year),
                              index=None, header=True)
         else:
             url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true'.format(
