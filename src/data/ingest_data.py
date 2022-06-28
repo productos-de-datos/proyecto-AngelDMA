@@ -3,7 +3,6 @@ Módulo de ingestión de datos.
 -------------------------------------------------------------------------------
 
 """
-import pandas as pd
 
 
 def ingest_data():
@@ -14,6 +13,8 @@ def ingest_data():
     descarga debe realizarse usando únicamente funciones de Python.
 
     """
+    import pandas as pd
+
     for year in range(1995, 2022):
         url = ''
         if year in range(2016, 2018):
