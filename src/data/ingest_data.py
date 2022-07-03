@@ -13,10 +13,26 @@ def ingest_data():
     descarga debe realizarse usando únicamente funciones de Python.
 
     """
-    raise NotImplementedError("Implementar esta función")
+    import pandas as pd
+
+    for year in range(1995, 2022):
+        url = ''
+        if year in range(2016, 2018):
+            url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'.format(
+                year)
+            archivo = pd.read_excel(url)
+            archivo.to_excel('data_lake/landing/{}.xls'.format(year),
+                             index=None, header=True)
+        else:
+            url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xlsx?raw=true'.format(
+                year)
+            archivo = pd.read_excel(url)
+            archivo.to_excel('data_lake/landing/{}.xlsx'.format(year),
+                             index=None, header=True)
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    ingest_data()
