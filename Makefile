@@ -30,6 +30,12 @@ pipeline:
 	python3 src/data/create_data_lake.py
 	python3 src/data/pipeline.py
 
+compute_daily_prices_plot:
+	python3 src/visualization/make_daily_prices_plot.py
+
+compute_monthly_prices_plot:
+	python3 src/visualization/make_monthly_prices_plot.py
+
 make_features:
 	python3 src/features/make_features.py
 
