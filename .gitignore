@@ -4,6 +4,7 @@ __pycache__/
 *$py.class
 .vscode
 data_lake
+src/models/precios-diarios.pkl
 
 # C extensions
 *.so
