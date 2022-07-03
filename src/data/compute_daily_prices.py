@@ -18,7 +18,7 @@ def compute_daily_prices():
     """
     import pandas as pd
 
-    df = read_csv('data_lake/cleansed/precios-horarios.csv')
+    df = pd.read_csv('data_lake/cleansed/precios-horarios.csv')
     df = df.dropna()
     df = df.groupby(df.fecha).mean()
     df = df.iloc[:, 1:2]
