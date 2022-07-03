@@ -17,7 +17,6 @@ def ingest_data():
 
     for year in range(1995, 2022):
         url = ''
-        url = ''
         if year in range(2016, 2018):
             url = 'https://github.com/jdvelasq/datalabs/blob/master/datasets/precio_bolsa_nacional/xls/{}.xls?raw=true'.format(
                 year)
