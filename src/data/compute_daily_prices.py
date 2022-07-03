@@ -1,3 +1,7 @@
+from operator import index
+from pandas import read_csv
+
+
 def compute_daily_prices():
     """Compute los precios promedios diarios.
 
@@ -12,10 +16,17 @@ def compute_daily_prices():
 
 
     """
-    raise NotImplementedError("Implementar esta función")
+    import pandas as pd
+
+    df = read_csv('data_lake/cleansed/precios-horarios.csv')
+    df = df.dropna()
+    df = df.groupby(df.fecha).mean()
+    df = df.iloc[:, 1:2]
+    df.to_csv('data_lake/business/precios-diarios.csv')
 
 
 if __name__ == "__main__":
     import doctest
 
     doctest.testmod()
+    compute_daily_prices()
