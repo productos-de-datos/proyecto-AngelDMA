@@ -18,7 +18,7 @@ def make_features():
     import pandas as pd
 
     df = pd.read_csv('data_lake/business/precios-diarios.csv')
-    df.to_csv('data_lake/business/features/precios-diarios.csv', index=None)
+    df.to_csv('data_lake/business/features/precios_diarios.csv', index=None)
 
 
 if __name__ == "__main__":
